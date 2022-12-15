@@ -1,0 +1,14 @@
+# Language options for welcome message
+en:
+  welcome: "Welcome to Calculator! Enter your name:"
+  valid_name: "Make sure to enter a valid name."
+es:
+  welcome: "Bienvenido a la calculadora! Entre su nombre:"
+  valid_name: "Asegúrese de entrar un nombre válido."
+
+
+valid_number: "Invalid number. Please try again."
+valid_operator: "Must choose 1, 2, 3, or 4."
+continue: "Do you want to perform another calculation? (Y to calculate again)"
+goodbye: "Thank you for using the calculator. Good bye!"
+# ... rest of file omitted for brevity
