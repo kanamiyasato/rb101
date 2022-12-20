@@ -11,4 +11,3 @@ valid_number: "Invalid number. Please try again."
 valid_operator: "Must choose 1, 2, 3, or 4."
 continue: "Do you want to perform another calculation? (Y to calculate again)"
 goodbye: "Thank you for using the calculator. Good bye!"
-# ... rest of file omitted for brevity
