@@ -1,0 +1,6 @@
+valid_input: "Invalid number. Please try again."
+welcome: "Welcome to Mortgage Calculator!"
+goodbye: "Thank you for using Mortgage Calculator. Goodbye!"
+continue: "Do you want to perform another calculation? (Y for yes, N for no)"
+prompt_input: "Please input the following..."
+interest_rate: "Interest Rate:\n (Example: 5 for 5% or 2.5 for 2.5%)"
