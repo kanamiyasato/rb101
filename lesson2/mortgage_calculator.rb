@@ -15,7 +15,7 @@ def float?(input)
 end
 
 def valid_num?(input)
-  is_integer?(input) || is_float?(input)
+  integer?(input) || float?(input)
 end
 
 def calculate_monthly_payment(amount, interest, duration)
