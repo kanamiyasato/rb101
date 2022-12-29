@@ -6,11 +6,11 @@ def prompt(message)
   Kernel.puts("=> #{message}")
 end
 
-def is_integer?(input)
+def integer?(input)
   input.to_i.to_s == input && input.to_i > 0
 end
 
-def is_float?(input)
+def float?(input)
   input.to_f.to_s == input && input.to_f > 0.0
 end
 
@@ -36,6 +36,11 @@ def display_goodbye_prompt
   system('clear')
 end
 
+def clear_calc_input
+  sleep(0.75)
+  system('clear')
+end
+
 # Main program
 display_welcome_prompt
 
@@ -53,8 +58,7 @@ loop do
       prompt(MESSAGES['valid_input'])
     end
   end
-  sleep(0.75)
-  system('clear')
+  clear_calc_input
 
   prompt(MESSAGES['prompt_input'])
   sleep(1)
@@ -69,8 +73,7 @@ loop do
     end
   end
   monthly_rate = (apr.to_f / 100) / 12
-  sleep(0.75)
-  system('clear')
+  clear_calc_input
 
   prompt(MESSAGES['prompt_input'])
   sleep(1)
@@ -85,20 +88,28 @@ loop do
     end
   end
   months = years.to_f() * 12
-  sleep(0.75)
-  system('clear')
+  clear_calc_input
 
   result = calculate_monthly_payment(loan_amount, monthly_rate, months)
   prompt("Amount due each month: $#{result.round(2)}")
   sleep(1)
-
-  prompt(MESSAGES['continue'])
-  answer = Kernel.gets().chomp()
-  break unless answer.downcase().start_with?('y')
-  prompt("Resetting Mortgage Calculator...")
-  sleep(2)
-  system('clear')
-      
+  answer = ''
+  loop do
+    prompt(MESSAGES['continue'])
+    answer = Kernel.gets().chomp().downcase()
+    if answer == 'y'
+      prompt("Resetting Mortgage Calculator...")
+      sleep(2)
+      system('clear')
+      break
+    elsif answer == 'n'
+      break
+    else
+      prompt(MESSAGES['valid_input'])
+      clear_calc_input
+    end
+  end
+  break if answer == 'n'
 end
 
 display_goodbye_prompt
