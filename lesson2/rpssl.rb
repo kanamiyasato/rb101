@@ -3,11 +3,11 @@ MESSAGES = YAML.load_file('rpssl_messages.yml')
 
 # Define hashes
 ABBREVIATION = {
-'r' => 'rock',
-'p' => 'paper',
-'s' => 'scissors',
-'k' => 'spock',
-'l' => 'lizard'
+  'r' => 'rock',
+  'p' => 'paper',
+  's' => 'scissors',
+  'k' => 'spock',
+  'l' => 'lizard'
 }
 
 WINNING_MOVES = {
@@ -30,7 +30,7 @@ end
 
 def valid_input?(choice)
   if ABBREVIATION.keys.include?(choice)
-    return ABBREVIATION.fetch(choice)
+    ABBREVIATION.fetch(choice)
   end
 end
 
@@ -58,9 +58,9 @@ end
 
 def grand_winner(score)
   if score[:player] == 3
-    return "Player is the grand winner!"
+    "Player is the grand winner!"
   elsif score[:computer] == 3
-    return "Computer is the grand winner!"
+    "Computer is the grand winner!"
   end
 end
 
@@ -69,14 +69,14 @@ def play_again(answer)
     prompt("Resetting game...")
     sleep(1.5)
     system('clear')
-    return true
+    true
   elsif answer == 'n'
-    return false
+    false
   else
     prompt("Invalid input.")
     sleep(0.75)
     system('clear')
-    return "invalid"
+    "invalid"
   end
 end
 
@@ -153,19 +153,19 @@ loop do
   prompt(grand_winner(score))
 
   answer = ''
-    loop do
-      prompt(MESSAGES['play_again'])
-      answer = Kernel.gets().chomp().downcase()
-      play_again(answer)
-      if play_again(answer) == true
-        break
-      elsif play_again(answer) == false
-        break
-      elsif play_again(answer) == "invalid"
-        next
-      end
+  loop do
+    prompt(MESSAGES['play_again'])
+    answer = Kernel.gets().chomp().downcase()
+    play_again(answer)
+    if play_again(answer) == true
+      break
+    elsif play_again(answer) == false
+      break
+    elsif play_again(answer) == "invalid"
+      next
     end
-    break if play_again(answer) == false
+  end
+  break if play_again(answer) == false
 end
 
 display_goodbye_prompt
