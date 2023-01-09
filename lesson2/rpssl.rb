@@ -154,7 +154,7 @@ loop do
 
   answer = ''
     loop do
-      prompt("Play again?")
+      prompt(MESSAGES['play_again'])
       answer = Kernel.gets().chomp().downcase()
       play_again(answer)
       if play_again(answer) == true
