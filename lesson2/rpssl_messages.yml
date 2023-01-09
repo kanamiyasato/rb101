@@ -1,0 +1,4 @@
+welcome: "Welcome to the Rock Paper Scissors Spock Lizard Game!"
+valid_input: "Invalid input. Please try again."
+play_again: "Do you want to play again? (Y for yes, N for no)"
+goodbye: "Thanks for playing. Goodbye!"
